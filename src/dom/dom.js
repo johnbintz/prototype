@@ -1317,8 +1317,9 @@ Element.Methods = {
     if (element == document.body) return $(element);
 
     while ((element = element.parentNode) && element != document.body)
-      if (Element.getStyle(element, 'position') != 'static')
-        return $(element);
+    	if (element.style)
+	      if (Element.getStyle(element, 'position') != 'static')
+	        return $(element);
 
     return $(document.body);
   },
