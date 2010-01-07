@@ -1004,6 +1004,9 @@ Element.Methods = {
   **/
   getStyle: function(element, style) {
     element = $(element);
+    if (!element.style)
+    	return null;
+
     style = style == 'float' ? 'cssFloat' : style.camelize();
     var value = element.style[style];
     if (!value || value == 'auto') {
