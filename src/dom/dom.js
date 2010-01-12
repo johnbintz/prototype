@@ -1005,7 +1005,7 @@ Element.Methods = {
   getStyle: function(element, style) {
     element = $(element);
     if (!element.style)
-    	return null;
+      return null;
 
     style = style == 'float' ? 'cssFloat' : style.camelize();
     var value = element.style[style];
@@ -1581,8 +1581,8 @@ else if (Prototype.Browser.IE) {
         // accurate offsetTop and offsetLeft values for position: fixed.
         var offsetParent = element.getOffsetParent();
         if (offsetParent.getStyle)
-	        if (offsetParent && offsetParent.getStyle('position') === 'fixed')
-	          offsetParent.setStyle({ zoom: 1 });
+          if (offsetParent && offsetParent.getStyle('position') === 'fixed')
+            offsetParent.setStyle({ zoom: 1 });
         element.setStyle({ position: 'relative' });
         var value = proceed(element);
         element.setStyle({ position: position });
@@ -1594,7 +1594,7 @@ else if (Prototype.Browser.IE) {
   Element.Methods.getStyle = function(element, style) {
     element = $(element);
     if (!element.style)
-    	return null;
+      return null;
 
     style = (style == 'float' || style == 'cssFloat') ? 'styleFloat' : style.camelize();
     var value = element.style[style];
