@@ -951,6 +951,9 @@ new Test.Unit.Runner({
     // height/width could always be calculated if it's set to "auto" (Firefox)
     this.assertNotNull($('auto_dimensions').getStyle('height'));
     this.assertNotNull($('auto_dimensions').getStyle('width'));
+    
+    // assert that using getStyle on an object without a style property returns null
+    this.assertNull(Element.Methods.getStyle({}, 'width'));
   },
   
   testElementGetOpacity: function() {
